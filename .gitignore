@@ -1,0 +1,14 @@
+node_modules
+.DS_Store
+.idea
+dist
+coverage
+lib
+*.local
+.eslintcache
+.devcontainer/
+.history/
+.vscode
+*.zip
+.github
+.husky
