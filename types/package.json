@@ -1,0 +1,53 @@
+{
+  "name": "@angus/types",
+  "description": "TypeScript type definitions for AngusMeter",
+  "version": "1.0.0",
+  "author": {
+    "name": "AngusMeter Team"
+  },
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.mjs",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs",
+      "default": "./dist/index.mjs"
+    },
+    "./*": "./*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xcancloud/AngusSpecs.git",
+    "directory": "types"
+  },
+  "keywords": [
+    "typescript",
+    "types",
+    "angusmeter",
+    "api",
+    "testing"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "dev": "tsc -p tsconfig.build.json --watch",
+    "format": "biome format . --write",
+    "lint": "pnpm run lint:js && pnpm run lint:ts",
+    "lint:js": "biome check .",
+    "lint:ts": "tsc --noEmit",
+    "prepack": "pnpm run build",
+    "test": "pnpm run test:js",
+    "test:js": "vitest run",
+    "prepublish": "pnpm run build"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "unbuild": "^2.0.0",
+    "@biomejs/biome": "^1.8.0",
+    "vitest": "^2.0.0"
+  }
+}
